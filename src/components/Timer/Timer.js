@@ -1,5 +1,5 @@
 import React from 'react'
-import { krFormatter, usFormatter, countries } from './countries'
+import { countries } from './countries'
 
 const Timer = (props) => {
   const { country } = props
@@ -20,8 +20,7 @@ const Timer = (props) => {
   return (
     <div>
       <h2>{country} timer</h2>
-      <div>{country === "KR" && krFormatter(dateObj, countries)}</div>
-      <div>{country === "US" && usFormatter(dateObj, countries)}</div>
+      <div>{country && countries[country].formatter(dateObj, countries[country])}</div>
     </div>
   )
 }
