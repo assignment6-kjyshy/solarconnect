@@ -1,6 +1,6 @@
 .sort-result-wrapper {
   width: 70%;
-  height: 450px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +9,7 @@
 
 .result-container {
   width: 100%;
-  height: 200px;
+  height: 180px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
@@ -19,6 +19,6 @@
 .result-content {
   width: 90%;
   border: 1px solid gray;
-  height: 150px;
+  height: 100px;
   overflow: auto;
 }
