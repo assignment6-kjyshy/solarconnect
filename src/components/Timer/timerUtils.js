@@ -15,3 +15,21 @@ export const countries = {
     }
   }
 }
+
+export const getKRDate = () => {
+  const localDate = new Date()
+  const LOCAL_OFFSET = localDate.getTimezoneOffset() * 60 * 1000
+  const KR_OFFSET = 9 * 60 * 60 * 1000
+  const UTC = localDate.getTime() + LOCAL_OFFSET 
+  const krDate = new Date(UTC + KR_OFFSET)
+
+  return ({
+    year: krDate.getFullYear(),
+    month: krDate.getMonth() + 1,
+    date: krDate.getDate(),
+    day: krDate.getDay(),
+    hour: krDate.getHours(),
+    minute: krDate.getMinutes(),
+    second: krDate.getSeconds(),
+  })
+}
