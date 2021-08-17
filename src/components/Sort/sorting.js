@@ -10,34 +10,37 @@ const check = arr => {
   return checkedArr.map(data => data * 1);
 };
 
-const quickSort = (arr, l = 0, r = arr.length - 1) => {
+const quickSort = (array, l = 0, r = array.length - 1) => {
+  if (array.length < 2) {
+    return array;
+  }
   if (l >= r) {
     return;
   }
   const mid = Math.floor((l + r) / 2);
-  const pivot = arr[mid];
-  const [array, stand] = divide(arr, l, r, pivot);
+  const pivot = array[mid];
+  const stand = divide(l, r, pivot);
   quickSort(array, l, stand - 1);
   quickSort(array, stand, r);
 
-  return array;
-};
-
-const divide = (arr, l, r, pivot) => {
-  while (l <= r) {
-    if (arr[l] < pivot) {
-      l++;
+  function divide(l, r, pivot) {
+    while (l <= r) {
+      if (array[l] < pivot) {
+        l++;
+      }
+      if (array[r] > pivot) {
+        r--;
+      }
+      if (l <= r && array[l] >= pivot && array[r] <= pivot) {
+        const tmp = array[l];
+        array[l] = array[r];
+        array[r] = tmp;
+        l++;
+        r--;
+      }
     }
-    if (arr[r] > pivot) {
-      r--;
-    }
-    if (l <= r && arr[l] >= pivot && arr[r] <= pivot) {
-      const tmp = arr[l];
-      arr[l] = arr[r];
-      arr[r] = tmp;
-      l++;
-      r--;
-    }
+    return l;
   }
-  return [arr, l];
+
+  return array;
 };

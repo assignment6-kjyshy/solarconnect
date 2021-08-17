@@ -1,0 +1,37 @@
+.inputnumber-container {
+  width: 70%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 40px -18px rgba(0, 0, 0, 0.75);
+  margin-bottom: 30px;
+  background-color: lightgray;
+}
+
+.inputnumber-textarea {
+  max-width: 90%;
+  max-height: 100px;
+  width: 90%;
+  height: 100px;
+  overflow: auto;
+  font-size: 1rem;
+  border-color: lightgray;
+}
+
+.inputnumber-button {
+  margin-top: 15px;
+  width: 120px;
+  height: 40px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.75);
+  color: #fff;
+  background-color: #636363;
+  font-size: 1.2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.inputnumber-button:hover {
+  background-color: #454545;
+}

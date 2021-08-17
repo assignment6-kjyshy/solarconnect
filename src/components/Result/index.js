@@ -1,0 +1,1 @@
+export { MemoResult } from "./Result";

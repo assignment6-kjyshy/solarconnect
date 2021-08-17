@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Input } from "./Input";
-import { MemoResult } from "./Result";
+import { Input } from "../Input";
+import { MemoResult } from "../Result";
 import { sort } from "./sorting";
+import "./style.css";
 export const Sort = () => {
-  const [input, setInput] = useState([]);
+  const [input, setInput] = useState("");
   const [results, setResults] = useState({
     firstResult: [],
     secondResult: [],
@@ -11,14 +12,13 @@ export const Sort = () => {
 
   const onChange = e => {
     const { value } = e.target;
-    const nextValue = value.split(",");
-    setInput(nextValue);
+    setInput(value);
   };
 
   const onSubmit = e => {
     e.preventDefault();
-    const content = sort(input);
-
+    const arrInput = input.split(",");
+    const content = sort(arrInput);
     setTimeout(() => {
       setResults(pre => ({
         ...pre,
@@ -36,8 +36,10 @@ export const Sort = () => {
   return (
     <>
       <Input onSubmit={onSubmit} value={input} onChange={onChange} placeholder="ex) 1,2,3,4"></Input>
-      <MemoResult value={results.firstResult}></MemoResult>
-      <MemoResult value={results.secondResult}></MemoResult>
+      <div className="sort-result-wrapper">
+        <MemoResult title="오름차순 정렬 결과" value={results.firstResult}></MemoResult>
+        <MemoResult title="내림차순 정렬 결과" value={results.secondResult}></MemoResult>
+      </div>
     </>
   );
 };
