@@ -1,8 +1,7 @@
 import React from 'react'
 import './App.css';
 import Timer from './components/Timer';
-import InputNumbers from './components/InputNumbers';
-import SortResult from './components/SortResult';
+import {Sort} from './components/Sort'
 
 function App() {
 
@@ -12,8 +11,7 @@ function App() {
       <div className="main">
         
         <Timer country={"KR"} />
-        <InputNumbers />
-        <SortResult />
+        <Sort />
         <Timer country={"US"} />
         
         </div>
