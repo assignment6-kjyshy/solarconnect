@@ -66,12 +66,12 @@ const Timer = (props) => {
   }, [time])
 
   return (
-    <div>
-      <h2>{countries[country].title}</h2>
+    <div className="timer-container">
+      {/*<h3 className="timer-title">{countries[country].title}</h3>*/}
       {!isLoading &&
-      <div> 
-      <div>{countries[country].formatter(time, countries[country])}</div>
-      <span>{clock}</span>
+      <div className="timer-content"> 
+      <div className="timer-date">{countries[country].formatter(time, countries[country])}</div>
+      <div className="timer-clock">{clock}</div>
       </div>
       }
     </div>
