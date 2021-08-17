@@ -1,3 +1,4 @@
+
 # 프리온보딩 assignment6 - [솔라커넥트]
 <br>
 
@@ -48,5 +49,6 @@ npm run build
 - Date 객체 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date
 - 자바스크립트에서 타임존 다루기 : https://meetup.toast.com/posts/125
 - 현재 시간을 항상 한국 날짜, 시간으로 표시하기 : https://hianna.tistory.com/451
+- Digital Clock in JavaScript : https://codepen.io/afarrar/pen/JRaEjP
 <br>
 <br>
