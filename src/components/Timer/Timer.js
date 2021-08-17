@@ -14,7 +14,8 @@ const Timer = (props) => {
       const KR_OFFSET = 9 * 60 * 60 * 1000
       const UTC = localDate.getTime() + LOCAL_OFFSET 
       const krDate = new Date(UTC + KR_OFFSET)
-      const obj = {
+      
+      setTime({
         year: krDate.getFullYear(),
         month: krDate.getMonth() + 1,
         date: krDate.getDate(),
@@ -22,15 +23,6 @@ const Timer = (props) => {
         hour: krDate.getHours(),
         minute: krDate.getMinutes(),
         second: krDate.getSeconds(),
-      }
-      setTime({
-        year: obj.year,
-        month: obj.month,
-        date: obj.date,
-        day: obj.day,
-        hour: obj.hour,
-        minute: obj.minute,
-        second: obj.second
       })
     }
 
@@ -67,13 +59,12 @@ const Timer = (props) => {
 
   return (
     <div className="timer-container">
-      {/*<h3 className="timer-title">{countries[country].title}</h3>*/}
-      {!isLoading &&
+      {isLoading ? <div className="timer-loader">Setting Timer...</div> : (
       <div className="timer-content"> 
       <div className="timer-date">{countries[country].formatter(time, countries[country])}</div>
       <div className="timer-clock">{clock}</div>
       </div>
-      }
+      )}
     </div>
   )
 }
